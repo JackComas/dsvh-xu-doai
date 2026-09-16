@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Oi&family=Space+Grotesk:wght@300..700&display=swap");
+
+#scrollspy-container {
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  padding: 1.75vw 1.25vh;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--bs-gray-200);
+}

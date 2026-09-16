@@ -1,0 +1,32 @@
+@media (hover: none) or (pointer: none) {
+  /* =============================== */
+  /* ========== SCROLLSPY ========== */
+  /* =============================== */
+
+  /* Container */
+  #scrollspy-container {
+    gap: 3.14vh;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-radius: 1rem;
+    opacity: 100%;
+  }
+
+  .scrollspy-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-color: var(--bs-primary-text-emphasis);
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(---bs-primary-text-emphasis);
+    border-width: 0.15rem;
+    border-style: solid;
+  }
+
+  .navbar > .container-fluid {
+    margin: 0rem 5vw;
+    height: 3rem;
+  }
+}

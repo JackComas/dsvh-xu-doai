@@ -1,0 +1,57 @@
+@media (hover: hover) and (pointer: fine) {
+  /* =============================== */
+  /* ========== SCROLLSPY ========== */
+  /* =============================== */
+
+  /* Container */
+  #scrollspy-container {
+    gap: 1.5vh;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-radius: 1rem;
+    opacity: 40%;
+    transition: 100ms;
+    transition-timing-function: ease-out;
+  }
+
+  #scrollspy-container:hover {
+    opacity: 100%;
+    transition: 100ms;
+    transition-timing-function: ease-out;
+    gap: 1.5rem;
+    padding: 2rem 0.5rem;
+  }
+
+  /* Scrollspy Circles */
+  .scrollspy-circle {
+    background-color: var(--bs-light);
+    color: var(--bs-primary-text-emphasis);
+    width: 1.75rem;
+    height: 1.75rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-width: 0.2rem;
+    border-color: var(--bs-primary-text-emphasis);
+    border-style: solid;
+    transition: 100ms;
+    transition-timing-function: ease-out;
+  }
+
+  .scrollspy-circle:hover {
+    background-color: var(--bs-primary-bg-subtle);
+    border-width: 0.2rem;
+    border-style: solid;
+    transition: 100ms;
+    transition-timing-function: ease-out;
+  }
+
+  /* ======================== */
+  /* ==== Navigation Bar ==== */
+  /* ======================== */
+
+  .navbar > .container-fluid {
+    margin: 0rem 5vw;
+    height: 3rem;
+  }
+}
