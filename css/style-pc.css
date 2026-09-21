@@ -40,7 +40,6 @@
 
   .scrollspy-circle:hover {
     background-color: var(--bs-primary-bg-subtle);
-    border-width: 0.2rem;
     border-style: solid;
     transition: 100ms;
     transition-timing-function: ease-out;
@@ -50,8 +49,5 @@
   /* ==== Navigation Bar ==== */
   /* ======================== */
 
-  .navbar > .container-fluid {
-    margin: 0rem 5vw;
-    height: 3rem;
-  }
+
 }

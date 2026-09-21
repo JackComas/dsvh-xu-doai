@@ -1,15 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Oi&family=Space+Grotesk:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@300..700&display=swap');
 
+* {
+  --w-h-ratio: calc(1vw/1vh);
+  --h-w-ratio: calc(1vh/1vw);
+}
 #scrollspy-container {
   display: flex;
   flex-direction: column;
   z-index: 9999;
-  padding: 1.75vw 1.25vh;
-  position: absolute;
+  padding: 1rem 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
   align-self: center;
   justify-self: center;
   justify-content: center;
   align-items: center;
   align-content: center;
   background-color: var(--bs-gray-200);
+}
+
+.navbar > .container-fluid {
+  margin: 0 5vw;
+  height: 5.5vh;
+}
+
+#titlecard {
+  background-color: var(--bs-gray-900);
+  color: var(--bs-white);
+  padding: 4rem;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#titlecard-img {
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  transform: translate(calc(-50% + 15rem), -50%);
+}
+
+.title {
+  position: absolute;
+  z-index: 1;
+  text-shadow: 0px 0px 10vh var(--bs-white);
+  margin: 1rem;
+}
+
+.text {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 150%;
+  font-style: normal;
+}
+
+#big-title {
+  position: relative;
+  font-size: 400%;
+  font-family: "Dela Gothic One", sans-serif;
+  font-style: normal;
+  z-index: 43;
+}
+
+#big-title > i {
+  color: var(--bs-red);
 }
