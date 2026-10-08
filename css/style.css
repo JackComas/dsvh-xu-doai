@@ -1,28 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@300..700&display=swap");
 
-* {
+:root {
   --w-h-ratio: calc(1vw/1vh);
   --h-w-ratio: calc(1vh/1vw);
   --text-color: var(--bs-black);
   --title-text-color: var(--bs-white);
-  --text-accent-color: var(--bs-yellow);
-  --text-second-accent-color: var(--bs-orange);
+  --text-accent-color: var(--bs-primary);
+  --text-second-accent-color: var(--bs-blue);
   --shadow-color: var(--bs-black);
-}
-#scrollspy-container {
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  padding: 1rem 0.5rem;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  align-self: center;
-  justify-self: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background-color: var(--bs-gray-200);
+  --transparent-bg-color: rgba(33, 37, 41, 0.5);
 }
 
 .navbar > .container-fluid {
@@ -32,25 +18,36 @@
 
 #titlecard {
   color: var(--title-text-color);
-  padding: 4rem;
-  min-height: 55vh;
+  padding: 2rem;
+  min-height: 70vh;
   position: relative;
   overflow: hidden;
-  background: #22c1c3;
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  background: #101017;
+  margin: 0;
+  background-color: #0b0d1a;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 120px, #fff, transparent),
+    radial-gradient(2px 2px at 150px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 60px 170px, #cfe3ff, transparent),
+    radial-gradient(1.5px 1.5px at 180px 150px, #ffe9c4, transparent),
+    radial-gradient(1px 1px at 40px 90px, #fff, transparent);
+  background-size:
+    200px 200px,
+    230px 230px,
+    260px 260px,
+    290px 290px,
+    320px 320px,
+    170px 170px;
 }
 
 #titlecard-img {
   height: calc(50vh + (7vw));
   position: absolute;
-  top: 50%;
-  left: calc(50% + 5rem);
+  bottom: 0;
+  left: calc(50%);
   z-index: 0;
-  transform: translate(calc(-50% + 15rem), -50%);
+  transform: translate(calc(-50% + 25vw), 0);
 }
 
 .title {
@@ -70,7 +67,7 @@
 }
 
 p.text.title {
-  padding: 0rem;
+  padding: 1rem;
 }
 
 p.text {
@@ -83,6 +80,7 @@ p.text {
   font-family: "Dela Gothic One", sans-serif;
   font-style: normal;
   z-index: 43;
+  padding: 1rem 3rem;
 }
 
 #big-title > i {

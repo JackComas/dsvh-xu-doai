@@ -31,6 +31,23 @@ function resizeTexts() {
   }
 }
 
+function addBG(el) {
+  el.style.backgroundColor =
+    "rgba(33, 37, 41, min(calc( 0.6 / var(--w-h-ratio) - 0.25), 1))";
+  el.style.borderRadius = "1rem";
+}
+
+function removeBG(el) {
+  el.style.backgroundColor = "transparent";
+  el.style.borderRadius = "0%";
+}
+
 window.onload = () => {
+  const bigTitle = document.getElementById("big-title");
+  const allTexts = document.getElementsByClassName("text title");
+  for (let el of allTexts) {
+    addBG(el);
+  }
+  addBG(bigTitle);
   resizeTexts();
 };

@@ -52,11 +52,14 @@ html {
 }
 .ds-navbar .nav-link:hover {
   color: var(--ds-blue);
+  border-bottom-color: var(--ds-blue);
+  border-bottom-width: 2px;
 }
 /* .active is added automatically by Bootstrap's scrollspy */
 .ds-navbar .nav-link.active {
   color: var(--ds-blue);
   border-bottom-color: var(--ds-blue);
+  border-bottom-width: 2px;
 }
 @media (max-width: 991.98px) {
   .ds-navbar .nav-link {
@@ -65,7 +68,9 @@ html {
     padding-left: 0.75rem;
   }
   .ds-navbar .nav-link.active {
-    border-left-color: var(--ds-blue);
+    color: var(--ds-blue);
+    border-bottom-color: var(--ds-blue);
+    border-bottom-width: 2px;
   }
 }
 

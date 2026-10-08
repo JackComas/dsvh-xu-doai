@@ -36,7 +36,7 @@
         <div class="container-fluid px-4">
           <a href="#titlecard" class="ds-brand">
             <!-- Simple emblem; replace with <img src="img/logo.png" alt="Logo"> when you have one -->
-            <span>Di sản số<br />Xứ Đoài</span>
+            <span>Di sản số Xứ Đoài</span>
           </a>
 
           <button
@@ -94,7 +94,12 @@
       </nav>
     </header>
 
-    <body>
+    <main
+      data-bs-spy="scroll"
+      data-bs-target="#mainNav"
+      data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true"
+    >
       <section id="titlecard">
         <div class="title">
           <div class="hero-bg"></div>
@@ -110,13 +115,12 @@
             nghệ số dành cho học sinh THPT<br />
             <br />
             <a
-              class="btn btn-warning rounded-pill px-4"
+              class="btn rounded-pill px-4 btn-primary"
               style="padding: 0.5rem 4rem; text-shadow: none"
-              href="#start"
+              href="#map-section"
               >Bắt đầu tìm hiểu</a
             >
           </p>
-          <p class="text title"></p>
         </div>
 
         <img src="img/titlecard.png" alt="" id="titlecard-img" />
@@ -135,6 +139,7 @@
             Circle,
             Polygon,
             Popup,
+            Icon,
           } from "leaflet";
           const map = new LeafletMap("map").setView(
             [21.022796, 105.645808],
@@ -148,7 +153,35 @@
               '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
           }).addTo(map);
 
-          const chuaThay = new Marker([21.022936, 105.645427]).addTo(map);
+          const chuaThayIcon = new Icon({
+            iconUrl: "./img/chuaThayIcon.png",
+            iconSize: [100, 100], // Width and height of the image in pixels
+            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
+            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
+          });
+          const chuaTayPhuongIcon = new Icon({
+            iconUrl: "./img/chuaTayPhuongIcon.png",
+            iconSize: [100, 100], // Width and height of the image in pixels
+            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
+            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
+          });
+          const dinhSoIcon = new Icon({
+            iconUrl: "./img/dinhSoIcon.png",
+            iconSize: [100, 100], // Width and height of the image in pixels
+            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
+            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
+          });
+          const hatDoIcon = new Icon({
+            iconUrl: "./img/hatDoIcon.png",
+            iconSize: [100, 100], // Width and height of the image in pixels
+            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
+            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
+          });
+
+          const chuaThay = new Marker([21.022936, 105.645427], {
+            icon: chuaThayIcon,
+          }).addTo(map);
+
           const chuaThayArea = new Polygon([
             [21.021548, 105.646127],
             [21.02309, 105.646036],
@@ -159,10 +192,15 @@
             [21.022942, 105.644995],
             [21.021388, 105.645467],
           ]).addTo(map);
-          const chuaTayPhuong = new Marker([21.0444887, 105.5696847]).addTo(
-            map,
-          );
-          const dinhSo = new Marker([20.9753255, 105.676935]).addTo(map);
+          const chuaTayPhuong = new Marker([21.0444887, 105.5696847], {
+            icon: chuaTayPhuongIcon,
+          }).addTo(map);
+          const dinhSo = new Marker([20.9753255, 105.676935], {
+            icon: dinhSoIcon,
+          }).addTo(map);
+          const hatDo = new Marker([20.978733068130268, 105.59882654187525], {
+            icon: hatDoIcon,
+          }).addTo(map);
           const popup = new Popup();
           function onChuaThay(e) {
             popup
@@ -187,7 +225,6 @@
         </p>
       </section>
 
-      <!-- 3. Di sản (placeholder cards, edit freely) -->
       <section id="di-san" class="page-section">
         <h1 class="section-title"><i class="bi bi-bank"></i>Di sản</h1>
         <div class="row g-3">
@@ -222,21 +259,32 @@
         </div>
       </section>
 
-      <!-- 4. Video -->
       <section id="video" class="page-section">
         <h1 class="section-title">
           <i class="bi bi-play-circle"></i>Video giới thiệu
         </h1>
         <div class="ds-card">
           <div class="ratio ratio-16x9">
-            <div class="ds-placeholder">
-              Chèn video (iframe YouTube) tại đây
-            </div>
+            <iframe
+              src="https://www.youtube.com/embed/5wMORvb6klM"
+              title="Khám phá vẻ đẹp chùa Thầy | Điểm đến"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
 
-      <!-- 5. Trải nghiệm -->
       <section id="trai-nghiem" class="page-section">
         <h1 class="section-title">
           <i class="bi bi-controller"></i>Trải nghiệm
@@ -265,14 +313,13 @@
         </div>
       </section>
 
-      <!-- 6. Khảo sát -->
       <section id="khao-sat" class="page-section">
         <h1 class="section-title"><i class="bi bi-bar-chart"></i>Khảo sát</h1>
         <div class="ds-card">
           <div class="ds-placeholder">Kết quả khảo sát sẽ hiển thị tại đây</div>
         </div>
       </section>
-    </body>
+    </main>
 
     <footer></footer>
 
