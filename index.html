@@ -13,34 +13,265 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style-pc.css" />
     <link rel="stylesheet" href="./css/style-touchscreen.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+      integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
+      crossorigin=""
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+        },
+        "integrity": {
+          "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a href="#" class="navbar-brand">Logo Here idk man</a>
+      <nav class="navbar navbar-expand-lg sticky-top ds-navbar">
+        <div class="container-fluid px-4">
+          <a href="#titlecard" class="ds-brand">
+            <!-- Simple emblem; replace with <img src="img/logo.png" alt="Logo"> when you have one -->
+            <span>Di sản số<br />Xứ Đoài</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="#titlecard"
+                  ><i class="bi bi-house"></i>Trang chủ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#map-section"
+                  ><i class="bi bi-map"></i>Bản đồ số</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#di-san"
+                  ><i class="bi bi-bank"></i>Di sản</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#video"
+                  ><i class="bi bi-play-circle"></i>Video</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#trai-nghiem"
+                  ><i class="bi bi-controller"></i>Trải nghiệm</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#khao-sat"
+                  ><i class="bi bi-bar-chart"></i>Khảo sát</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#lien-he"
+                  ><i class="bi bi-envelope"></i>Liên hệ</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
 
     <body>
-      <div id="scrollspy-container">
-        <a class="scrollspy-circle" href="#titlecard"></a>
-        <div class="scrollspy-circle"></div>
-        <div class="scrollspy-circle"></div>
-        <div class="scrollspy-circle"></div>
-        <div class="scrollspy-circle"></div>
-        <div class="scrollspy-circle"></div>
-      </div>
       <section id="titlecard">
         <div class="title">
-          <h1 id="big-title">Placeholder Text<br /><i>Emphasis</i></h1>
-          <p class="text">IDK</p>
+          <div class="hero-bg"></div>
+          <div class="hero-stars"></div>
+          <div class="hero-glow"></div>
+
+          <h1 id="big-title">
+            Hành trình tìm hiểu<br />
+            Di Sản Văn Hoá <i>Xứ Đoài</i>
+          </h1>
+          <p class="text title">
+            Giải pháp trải nghiệm và bảo tồn di sản văn hoá địa phương bằng công
+            nghệ số dành cho học sinh THPT<br />
+            <br />
+            <a
+              class="btn btn-warning rounded-pill px-4"
+              style="padding: 0.5rem 4rem; text-shadow: none"
+              href="#start"
+              >Bắt đầu tìm hiểu</a
+            >
+          </p>
+          <p class="text title"></p>
         </div>
+
         <img src="img/titlecard.png" alt="" id="titlecard-img" />
+
+        <div class="hero-fog"></div>
       </section>
 
-      <section id="map"></section>
+      <section id="map-section">
+        <h1 class="section-title">Bản đồ số</h1>
+        <div id="map"></div>
+        <script type="module">
+          import {
+            LeafletMap,
+            TileLayer,
+            Marker,
+            Circle,
+            Polygon,
+            Popup,
+          } from "leaflet";
+          const map = new LeafletMap("map").setView(
+            [21.022796, 105.645808],
+            13,
+          );
+
+          new TileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            minZoom: 2,
+            attribution:
+              '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          }).addTo(map);
+
+          const chuaThay = new Marker([21.022936, 105.645427]).addTo(map);
+          const chuaThayArea = new Polygon([
+            [21.021548, 105.646127],
+            [21.02309, 105.646036],
+            [21.023133, 105.645706],
+            [21.023403, 105.645612],
+            [21.023278, 105.645092],
+            [21.023033, 105.645186],
+            [21.022942, 105.644995],
+            [21.021388, 105.645467],
+          ]).addTo(map);
+          const chuaTayPhuong = new Marker([21.0444887, 105.5696847]).addTo(
+            map,
+          );
+          const dinhSo = new Marker([20.9753255, 105.676935]).addTo(map);
+          const popup = new Popup();
+          function onChuaThay(e) {
+            popup
+              .setLatLng(e.latlng)
+              .setContent("Di tích Quốc gia đặc biệt Chùa Thầy.")
+              .openOn(map);
+          }
+
+          chuaThay.on("click", onChuaThay);
+        </script>
+
+        <p class="text">
+          Xứ Đoài là tên gọi dân gian của vùng đất phía tây kinh thành Thăng
+          Long xưa, tương ứng với Sơn Tây cũ, nay thuộc phía tây Hà Nội. Nơi đây
+          có núi Tản Viên, dòng sông Hồng và những làng quê cổ kính còn giữ được
+          nếp sống truyền thống qua hàng trăm năm. Đến với Xứ Đoài, ta bắt gặp
+          làng cổ Đường Lâm, quê hương của hai vị vua Phùng Hưng và Ngô Quyền,
+          những ngôi đình, chùa, đền với kiến trúc mái cong và chạm khắc tinh
+          xảo như chùa Thầy, chùa Tây Phương, cùng nhiều lễ hội, làn điệu dân ca
+          và nghề thủ công đặc sắc. Đó là kho báu văn hoá lưu giữ ký ức và bản
+          sắc của cha ông, cần được gìn giữ và lan toả đến thế hệ trẻ.
+        </p>
+      </section>
+
+      <!-- 3. Di sản (placeholder cards, edit freely) -->
+      <section id="di-san" class="page-section">
+        <h1 class="section-title"><i class="bi bi-bank"></i>Di sản</h1>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="ds-card">
+              <i class="bi bi-bank"></i>
+              <h3 class="mt-2">Chùa Thầy</h3>
+              <p>Di tích Quốc gia đặc biệt.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="ds-card">
+              <i class="bi bi-bank"></i>
+              <h3 class="mt-2">Đình So</h3>
+              <p>Nét đẹp kiến trúc cổ truyền xứ Đoài.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="ds-card">
+              <i class="bi bi-bank"></i>
+              <h3 class="mt-2">Chùa Tây Phương</h3>
+              <p>Ngôi chùa cổ với kiến trúc mái cong đặc trưng.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="ds-card">
+              <i class="bi bi-music-note-beamed"></i>
+              <h3 class="mt-2">Hát Dô</h3>
+              <p>Di sản văn hoá phi vật thể độc đáo của người xứ Đoài.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Video -->
+      <section id="video" class="page-section">
+        <h1 class="section-title">
+          <i class="bi bi-play-circle"></i>Video giới thiệu
+        </h1>
+        <div class="ds-card">
+          <div class="ratio ratio-16x9">
+            <div class="ds-placeholder">
+              Chèn video (iframe YouTube) tại đây
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Trải nghiệm -->
+      <section id="trai-nghiem" class="page-section">
+        <h1 class="section-title">
+          <i class="bi bi-controller"></i>Trải nghiệm
+        </h1>
+        <div class="row g-3">
+          <div class="col-6 col-lg-3">
+            <div class="ds-card">
+              <div class="ds-placeholder">Mã QR<br />Chùa Thầy</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="ds-card">
+              <div class="ds-placeholder">Mã QR<br />Đình So</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="ds-card">
+              <div class="ds-placeholder">Mã QR<br />Chùa Tây Phương</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="ds-card">
+              <div class="ds-placeholder">Mã QR<br />Hát Dô</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Khảo sát -->
+      <section id="khao-sat" class="page-section">
+        <h1 class="section-title"><i class="bi bi-bar-chart"></i>Khảo sát</h1>
+        <div class="ds-card">
+          <div class="ds-placeholder">Kết quả khảo sát sẽ hiển thị tại đây</div>
+        </div>
+      </section>
     </body>
 
     <footer></footer>

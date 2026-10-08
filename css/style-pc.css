@@ -1,53 +1,164 @@
-@media (hover: hover) and (pointer: fine) {
-  /* =============================== */
-  /* ========== SCROLLSPY ========== */
-  /* =============================== */
+:root {
+  --ds-navy: #0f2f6b;
+  --ds-blue: #1747a6;
+  --ds-teal: #2bb3a3;
+  --ds-card-border: #e3e9f4;
+}
 
-  /* Container */
-  #scrollspy-container {
-    gap: 1.5vh;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    border-radius: 1rem;
-    opacity: 40%;
-    transition: 100ms;
-    transition-timing-function: ease-out;
+/* Anchors and scrollspy: keep section tops clear of the sticky navbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+/* ---------- Navbar ---------- */
+.ds-navbar {
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(15, 47, 107, 0.08);
+  padding-block: 0.4rem;
+}
+.ds-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ds-navy);
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.ds-brand svg {
+  width: 44px;
+  height: 44px;
+  flex: none;
+}
+
+.ds-navbar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ds-navy);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.ds-navbar .nav-link i {
+  font-size: 1.05rem;
+}
+.ds-navbar .nav-link:hover {
+  color: var(--ds-blue);
+}
+/* .active is added automatically by Bootstrap's scrollspy */
+.ds-navbar .nav-link.active {
+  color: var(--ds-blue);
+  border-bottom-color: var(--ds-blue);
+}
+@media (max-width: 991.98px) {
+  .ds-navbar .nav-link {
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
   }
-
-  #scrollspy-container:hover {
-    opacity: 100%;
-    transition: 100ms;
-    transition-timing-function: ease-out;
-    gap: 1.5rem;
-    padding: 2rem 0.5rem;
+  .ds-navbar .nav-link.active {
+    border-left-color: var(--ds-blue);
   }
+}
 
-  /* Scrollspy Circles */
-  .scrollspy-circle {
-    background-color: var(--bs-light);
-    color: var(--bs-primary-text-emphasis);
-    width: 1.75rem;
-    height: 1.75rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    border-width: 0.2rem;
-    border-color: var(--bs-primary-text-emphasis);
-    border-style: solid;
-    transition: 100ms;
-    transition-timing-function: ease-out;
-  }
+/* ---------- Hero buttons ---------- */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+.btn-ds {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 0.6rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: none;
+  border: 0;
+}
+.btn-ds:hover {
+  color: #fff;
+  filter: brightness(1.1);
+}
+.btn-ds-primary {
+  background: var(--ds-blue);
+}
+.btn-ds-teal {
+  background: var(--ds-teal);
+}
 
-  .scrollspy-circle:hover {
-    background-color: var(--bs-primary-bg-subtle);
-    border-style: solid;
-    transition: 100ms;
-    transition-timing-function: ease-out;
-  }
+/* ---------- Sections as cards ---------- */
+.page-section {
+  min-height: 70vh; /* tall enough for the last links to trigger scrollspy */
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ds-navy);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+.ds-card {
+  background: #fff;
+  border: 1px solid var(--ds-card-border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 6px 20px rgba(15, 47, 107, 0.06);
+  height: 100%;
+}
+.ds-card h3 {
+  font-size: 1.05rem;
+  color: var(--ds-navy);
+  font-weight: 700;
+}
+.ds-card p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.92rem;
+}
+.ds-card .bi {
+  color: var(--ds-blue);
+  font-size: 1.6rem;
+}
+.ds-placeholder {
+  border: 2px dashed var(--ds-card-border);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  color: #8a97b0;
+  min-height: 180px;
+  text-align: center;
+  padding: 1rem;
+}
 
-  /* ======================== */
-  /* ==== Navigation Bar ==== */
-  /* ======================== */
-
-
+/* Let the navbar grow when the mobile menu opens */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  height: auto !important;
+}
+.ds-navbar {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+.ds-navbar .navbar-collapse {
+  background: #fff;
 }

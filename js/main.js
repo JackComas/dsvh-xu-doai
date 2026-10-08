@@ -10,14 +10,24 @@ function resizeTexts() {
 
   const bigTitle = document.getElementById("big-title");
   const allTexts = document.getElementsByClassName("text");
-  console.log(allTexts);
+  const allH1 = document.getElementsByClassName("section-title");
 
   if (aspectRatio < 0.9) {
-    bigTitle.style.fontSize = "200%";
-  } else if (aspectRatio >= 0.9 && aspectRatio < 1.2) {
-    bigTitle.style.fontSize = "300%";
+    var bigTitleFontSize = "200%";
+    var smallTextFontSize = "0.9rem";
+  } else if (aspectRatio >= 0.9 && aspectRatio < 1.3) {
+    var bigTitleFontSize = "300%";
+    var smallTextFontSize = "1.25rem";
   } else {
-    bigTitle.style.fontSize = "400%";
+    var bigTitleFontSize = "400%";
+    var smallTextFontSize = "1.5rem";
+  }
+  bigTitle.style.fontSize = bigTitleFontSize;
+  for (let el of allTexts) {
+    el.style.fontSize = smallTextFontSize;
+  }
+  for (let el of allH1) {
+    el.style.fontSize = bigTitleFontSize;
   }
 }
 
