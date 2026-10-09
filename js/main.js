@@ -13,13 +13,13 @@ function resizeTexts() {
   const allH1 = document.getElementsByClassName("section-title");
 
   if (aspectRatio < 0.9) {
-    var bigTitleFontSize = "170%";
+    var bigTitleFontSize = "210%";
     var smallTextFontSize = "0.75rem";
   } else if (aspectRatio >= 0.9 && aspectRatio < 1.3) {
-    var bigTitleFontSize = "250%";
+    var bigTitleFontSize = "290%";
     var smallTextFontSize = "0.9rem";
   } else {
-    var bigTitleFontSize = "320%";
+    var bigTitleFontSize = "420%";
     var smallTextFontSize = "1rem";
   }
   bigTitle.style.fontSize = bigTitleFontSize;
@@ -28,6 +28,9 @@ function resizeTexts() {
   }
   for (let el of allH1) {
     el.style.fontSize = bigTitleFontSize;
+  }
+  for (let el of document.getElementsByClassName("text title")) {
+    el.style.fontSize = `calc(${smallTextFontSize}*1.5)`;
   }
 }
 

@@ -24,7 +24,6 @@
 
 #titlecard {
   color: var(--title-text-color);
-  padding: 2rem;
   min-height: calc(45vh + 2rem);
   position: relative;
   overflow: hidden;
