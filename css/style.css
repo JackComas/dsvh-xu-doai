@@ -99,7 +99,7 @@ h1.section-title {
 }
 
 .page-section {
-  padding: 0rem 4rem 2rem 4rem;
+  padding: -1rem 4rem 2rem 4rem;
   border-radius: 2rem;
 }
 
@@ -116,4 +116,13 @@ h1.section-title {
   color: var(text-color);
   margin-top: 0rem;
   margin: 0rem;
+}
+
+.popup-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 120%;
+  font-style: normal;
+  color: var(text-color);
 }
