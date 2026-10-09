@@ -129,12 +129,12 @@
 
       <div class="row section-group" id="experience">
         <p
-          class="alert alert-primary instruction"
+          class="alert alert-primary instruction d-md-none"
           role="alert"
           style="margin-top: 1rem"
         >
-          Hãy quét mã QR hoặc nhấp vào biểu tượng trên bản đồ số để truy cập các
-          tuyến trải nghiệm di sản văn hoá!
+          Hãy nhấp vào biểu tượng trên bản đồ số để truy cập các tuyến trải
+          nghiệm di sản văn hoá!
         </p>
         <section
           id="map-section"
@@ -147,37 +147,41 @@
 
         <section
           id="trai-nghiem"
-          class="page-section col-md-6 d-none d-sm-block d-xs-block flex-column"
+          class="page-section col-md-6 d-none d-none d-md-block flex-column"
         >
           <h1 class="section-title">
             <i class="bi bi-controller"></i>Trải nghiệm
           </h1>
-          <div class="row g-3">
-            <div class="col-6 col-lg-3">
-              <div class="ds-card">
-                <div class="ds-placeholder ratio ratio-1x1">
-                  Mã QR<br />Chùa Thầy
+          <div id="qr-content">
+            <p
+              class="alert alert-primary instruction"
+              role="alert"
+              style="margin: 2rem 0rem"
+            >
+              Hãy quét mã QR hoặc nhấp vào biểu tượng trên bản đồ số để truy cập
+              các tuyến trải nghiệm di sản văn hoá!
+            </p>
+            <div class="row g-3">
+              <div class="col-6 col-lg-3">
+                <div class="ds-card">
+                  <div class="ds-placeholder ratio ratio-1x1">Chùa Thầy</div>
                 </div>
               </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="ds-card">
-                <div class="ds-placeholder ratio ratio-1x1">
-                  Mã QR<br />Đình So
+              <div class="col-6 col-lg-3">
+                <div class="ds-card">
+                  <div class="ds-placeholder ratio ratio-1x1">Đình So</div>
                 </div>
               </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="ds-card">
-                <div class="ds-placeholder ratio ratio-1x1">
-                  Mã QR<br />Chùa Tây Phương
+              <div class="col-6 col-lg-3">
+                <div class="ds-card">
+                  <div class="ds-placeholder ratio ratio-1x1">
+                    Chùa Tây Phương
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="ds-card">
-                <div class="ds-placeholder ratio ratio-1x1">
-                  Mã QR<br />Hát Dô
+              <div class="col-6 col-lg-3">
+                <div class="ds-card">
+                  <div class="ds-placeholder ratio ratio-1x1">Hát Dô</div>
                 </div>
               </div>
             </div>
@@ -185,31 +189,98 @@
         </section>
       </div>
 
-      <section id="video" class="page-section">
-        <h1 class="section-title">
-          <i class="bi bi-play-circle"></i>Video giới thiệu
-        </h1>
-        <div class="ds-card">
-          <div class="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube.com/embed/5wMORvb6klM"
-              title="Khám phá vẻ đẹp chùa Thầy | Điểm đến"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+      <div class="row section-group" id="intro">
+        <section id="video" class="page-section col-md-4 d-flex flex-column">
+          <h1 class="section-title">
+            <i class="bi bi-play-circle"></i>Video giới thiệu
+          </h1>
+          <div class="ds-card">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/5wMORvb6klM"
+                title="Khám phá vẻ đẹp chùa Thầy | Điểm đến"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <section id="gallery" class="page-section col-md-4 d-flex flex-column">
+          <h1 class="section-title">
+            <i class="bi bi-play-circle"></i>Thư viện ảnh
+          </h1>
+          <div class="ds-card">
+            <div class="ratio ratio-16x9">
+              <div
+                id="galleryCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-indicators" id="galleryIndicators"></div>
+                <div class="carousel-inner" id="galleryInner"></div>
+
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <p class="text-center small mt-3 mb-0">
+                <a href="/gallery/" target="_blank" rel="noopener"
+                  >Trang Thư viện ảnh</a
+                >
+              </p>
+
+              <script src="js/gallery-setup.js"></script>
+            </div>
+          </div>
+        </section>
+        <section id="articles" class="page-section col-md-4 d-flex flex-column">
+          <h1 class="section-title">
+            <i class="bi bi-file-earmark-text"></i>Bài viết nổi bật
+          </h1>
+          <div
+            class="ds-card flex-grow-1 position-relative overflow-hidden"
+            style="min-height: 200px"
+          >
+            <div
+              class="list-group list-group-flush position-absolute top-0 start-0 end-0 bottom-0 overflow-y-auto"
+              id="articleList"
+            ></div>
+          </div>
+        </section>
+        <script src="js/articles-setup.js"></script>
+      </div>
 
       <section id="khao-sat" class="page-section">
         <h1 class="section-title"><i class="bi bi-bar-chart"></i>Khảo sát</h1>

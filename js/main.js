@@ -27,10 +27,10 @@ function resizeTexts() {
     el.style.fontSize = smallTextFontSize;
   }
   for (let el of allH1) {
-    el.style.fontSize = bigTitleFontSize;
+    el.style.fontSize = `calc(${bigTitleFontSize}*0.75)`;
   }
   for (let el of document.getElementsByClassName("text title")) {
-    el.style.fontSize = `calc(${smallTextFontSize}*1.5)`;
+    el.style.fontSize = `calc(${smallTextFontSize}*1.25)`;
   }
 }
 

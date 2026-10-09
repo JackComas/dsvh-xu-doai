@@ -124,6 +124,10 @@ h1.section-title {
   color: var(text-color);
 }
 
+#qr-content {
+  position: relative;
+}
+
 #video > div > div > iframe {
   border-radius: 1rem;
 }
