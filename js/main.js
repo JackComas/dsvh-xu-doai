@@ -14,13 +14,13 @@ function resizeTexts() {
 
   if (aspectRatio < 0.9) {
     var bigTitleFontSize = "170%";
-    var smallTextFontSize = "0.9rem";
+    var smallTextFontSize = "0.75rem";
   } else if (aspectRatio >= 0.9 && aspectRatio < 1.3) {
     var bigTitleFontSize = "250%";
-    var smallTextFontSize = "1rem";
+    var smallTextFontSize = "0.9rem";
   } else {
     var bigTitleFontSize = "320%";
-    var smallTextFontSize = "1.25rem";
+    var smallTextFontSize = "1rem";
   }
   bigTitle.style.fontSize = bigTitleFontSize;
   for (let el of allTexts) {
