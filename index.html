@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DSVH</title>
+    <title>Di Sản Văn Hoá Xứ Đoài</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -128,102 +128,59 @@
         <div class="hero-fog"></div>
       </section>
 
-      <section id="map-section">
-        <h1 class="section-title">Bản đồ số</h1>
-        <div id="map"></div>
-        <script type="module">
-          import {
-            LeafletMap,
-            TileLayer,
-            Marker,
-            Circle,
-            Polygon,
-            Popup,
-            Icon,
-          } from "leaflet";
-          const map = new LeafletMap("map").setView(
-            [21.022796, 105.645808],
-            13,
-          );
-
-          new TileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 19,
-            minZoom: 2,
-            attribution:
-              '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-          }).addTo(map);
-
-          const chuaThayIcon = new Icon({
-            iconUrl: "./img/chuaThayIcon.png",
-            iconSize: [100, 100], // Width and height of the image in pixels
-            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
-            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
-          });
-          const chuaTayPhuongIcon = new Icon({
-            iconUrl: "./img/chuaTayPhuongIcon.png",
-            iconSize: [100, 100], // Width and height of the image in pixels
-            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
-            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
-          });
-          const dinhSoIcon = new Icon({
-            iconUrl: "./img/dinhSoIcon.png",
-            iconSize: [100, 100], // Width and height of the image in pixels
-            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
-            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
-          });
-          const hatDoIcon = new Icon({
-            iconUrl: "./img/hatDoIcon.png",
-            iconSize: [100, 100], // Width and height of the image in pixels
-            iconAnchor: [50, 50], // Point of the icon which corresponds to marker's location (center-bottom)
-            popupAnchor: [0, 100], // Point from which the popup should open relative to the iconAnchor
-          });
-
-          const chuaThay = new Marker([21.022936, 105.645427], {
-            icon: chuaThayIcon,
-          }).addTo(map);
-
-          const chuaThayArea = new Polygon([
-            [21.021548, 105.646127],
-            [21.02309, 105.646036],
-            [21.023133, 105.645706],
-            [21.023403, 105.645612],
-            [21.023278, 105.645092],
-            [21.023033, 105.645186],
-            [21.022942, 105.644995],
-            [21.021388, 105.645467],
-          ]).addTo(map);
-          const chuaTayPhuong = new Marker([21.0444887, 105.5696847], {
-            icon: chuaTayPhuongIcon,
-          }).addTo(map);
-          const dinhSo = new Marker([20.9753255, 105.676935], {
-            icon: dinhSoIcon,
-          }).addTo(map);
-          const hatDo = new Marker([20.978733068130268, 105.59882654187525], {
-            icon: hatDoIcon,
-          }).addTo(map);
-          const popup = new Popup();
-          function onChuaThay(e) {
-            popup
-              .setLatLng(e.latlng)
-              .setContent("Di tích Quốc gia đặc biệt Chùa Thầy.")
-              .openOn(map);
-          }
-
-          chuaThay.on("click", onChuaThay);
-        </script>
-
-        <p class="text">
-          Xứ Đoài là tên gọi dân gian của vùng đất phía tây kinh thành Thăng
-          Long xưa, tương ứng với Sơn Tây cũ, nay thuộc phía tây Hà Nội. Nơi đây
-          có núi Tản Viên, dòng sông Hồng và những làng quê cổ kính còn giữ được
-          nếp sống truyền thống qua hàng trăm năm. Đến với Xứ Đoài, ta bắt gặp
-          làng cổ Đường Lâm, quê hương của hai vị vua Phùng Hưng và Ngô Quyền,
-          những ngôi đình, chùa, đền với kiến trúc mái cong và chạm khắc tinh
-          xảo như chùa Thầy, chùa Tây Phương, cùng nhiều lễ hội, làn điệu dân ca
-          và nghề thủ công đặc sắc. Đó là kho báu văn hoá lưu giữ ký ức và bản
-          sắc của cha ông, cần được gìn giữ và lan toả đến thế hệ trẻ.
+      <div class="row section-group">
+        <p class="alert alert-primary instruction" role="alert">
+          Hãy quét mã QR hoặc nhấp vào biểu tượng trên bản đồ số để truy cập các
+          tuyến trải nghiệm di sản văn hoá!
         </p>
-      </section>
+        <section
+          id="map-section"
+          class="page-section col-md-6 d-flex flex-column"
+        >
+          <h1 class="section-title">Bản đồ số</h1>
+          <div id="map" class="flex-grow-1"></div>
+          <script type="module" src="js/map-setup.js"></script>
+        </section>
+
+        <section
+          id="trai-nghiem"
+          class="page-section col-md-6 d-flex flex-column"
+        >
+          <h1 class="section-title">
+            <i class="bi bi-controller"></i>Trải nghiệm
+          </h1>
+          <div class="row g-3">
+            <div class="col-6 col-lg-3">
+              <div class="ds-card">
+                <div class="ds-placeholder ratio ratio-1x1">
+                  Mã QR<br />Chùa Thầy
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="ds-card">
+                <div class="ds-placeholder ratio ratio-1x1">
+                  Mã QR<br />Đình So
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="ds-card">
+                <div class="ds-placeholder ratio ratio-1x1">
+                  Mã QR<br />Chùa Tây Phương
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="ds-card">
+                <div class="ds-placeholder ratio ratio-1x1">
+                  Mã QR<br />Hát Dô
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <section id="di-san" class="page-section">
         <h1 class="section-title"><i class="bi bi-bank"></i>Di sản</h1>
@@ -281,34 +238,6 @@
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section id="trai-nghiem" class="page-section">
-        <h1 class="section-title">
-          <i class="bi bi-controller"></i>Trải nghiệm
-        </h1>
-        <div class="row g-3">
-          <div class="col-6 col-lg-3">
-            <div class="ds-card">
-              <div class="ds-placeholder">Mã QR<br />Chùa Thầy</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="ds-card">
-              <div class="ds-placeholder">Mã QR<br />Đình So</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="ds-card">
-              <div class="ds-placeholder">Mã QR<br />Chùa Tây Phương</div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="ds-card">
-              <div class="ds-placeholder">Mã QR<br />Hát Dô</div>
-            </div>
           </div>
         </div>
       </section>

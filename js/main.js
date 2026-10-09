@@ -13,14 +13,14 @@ function resizeTexts() {
   const allH1 = document.getElementsByClassName("section-title");
 
   if (aspectRatio < 0.9) {
-    var bigTitleFontSize = "200%";
+    var bigTitleFontSize = "170%";
     var smallTextFontSize = "0.9rem";
   } else if (aspectRatio >= 0.9 && aspectRatio < 1.3) {
-    var bigTitleFontSize = "300%";
-    var smallTextFontSize = "1.25rem";
+    var bigTitleFontSize = "250%";
+    var smallTextFontSize = "1rem";
   } else {
-    var bigTitleFontSize = "400%";
-    var smallTextFontSize = "1.5rem";
+    var bigTitleFontSize = "320%";
+    var smallTextFontSize = "1.25rem";
   }
   bigTitle.style.fontSize = bigTitleFontSize;
   for (let el of allTexts) {
@@ -32,8 +32,7 @@ function resizeTexts() {
 }
 
 function addBG(el) {
-  el.style.backgroundColor =
-    "rgba(33, 37, 41, min(calc( 0.6 / var(--w-h-ratio) - 0.25), 1))";
+  el.style.backgroundColor = "var(--transparent-bg-color)";
   el.style.borderRadius = "1rem";
 }
 
