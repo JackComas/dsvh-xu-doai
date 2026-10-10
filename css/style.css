@@ -135,3 +135,13 @@ h1.section-title {
 #galleryCarousel {
   border-radius: 1rem;
 }
+
+.QR {
+  position: relative;
+  top: 0;
+}
+
+.qr-text {
+  align-self: center;
+  justify-self: center;
+}

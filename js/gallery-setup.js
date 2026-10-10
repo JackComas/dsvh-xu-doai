@@ -19,7 +19,7 @@ galleryImages.forEach((file, i) => {
 
   inner.insertAdjacentHTML(
     "beforeend",
-    `<div class="carousel-item ${active}" data-bs-interval="4000">
+    `<div class="carousel-item ${active}" data-bs-interval="10000">
          <div class="w-100 h-100">
          <img src="/gallery/img/${file}" class="d-block w-100" alt="Ảnh ${i + 1}"
               style="max-height: 500px; object-fit: cover; position: relative;" />
