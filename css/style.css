@@ -128,7 +128,7 @@ h1.section-title {
   color: var(text-color);
 }
 
-#video > div > div > iframe {
+.video > div > div > iframe {
   border-radius: 1rem;
 }
 

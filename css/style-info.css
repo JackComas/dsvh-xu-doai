@@ -1,0 +1,262 @@
+/* =========================================================
+   Info pages: nhan-vat.html, le-hoi.html, bao-ton.html
+   Load AFTER style.css, style-pc.css, style-architecture.css, style-route.css.
+   Re-uses .ds-card, .arch-* (cards, photos, panels), .route-* (hero, pills,
+   section titles, icons, activity cards, values grid).
+   ========================================================= */
+
+.info-page main {
+  padding-bottom: 2rem;
+}
+.info-switch {
+  margin-top: 1.25rem;
+}
+
+/* ---------- Photo aspect ratios ---------- */
+.ph-43 { aspect-ratio: 4 / 3; }
+.ph-34 { aspect-ratio: 3 / 4; }
+.ph-169 { aspect-ratio: 16 / 9; }
+
+/* ---------- Person cards (nhan-vat) ---------- */
+.person-card .arch-name {
+  font-size: 1.05rem;
+}
+.person-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.ds-card .arch-panel p {
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: #3b4660;
+}
+
+/* ---------- Link cards to the 4 routes ---------- */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1rem;
+}
+.link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 47, 107, 0.12);
+}
+.link-card:focus-visible {
+  outline: 3px solid var(--ds-teal);
+  outline-offset: 2px;
+}
+.link-card .route-tag {
+  background: var(--ds-blue);
+}
+.link-card strong {
+  color: var(--ds-navy);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.chip-list li {
+  background: var(--arch-blue-tint);
+  color: var(--ds-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-card { transition: none; }
+  .link-card:hover { transform: none; }
+}
+
+/* ---------- Timeline / step cards (le-hoi, bao-ton) ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 1rem;
+}
+@media (min-width: 576px) {
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .timeline--5 { grid-template-columns: repeat(5, 1fr); }
+  .timeline--7 { grid-template-columns: repeat(4, 1fr); }
+  /* connector line behind the numbered badges (5-step festival timeline) */
+  .timeline--5::before {
+    content: "";
+    position: absolute;
+    top: 1.4rem;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: rgba(23, 71, 166, 0.3);
+  }
+}
+.tl-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tl-num {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(15, 47, 107, 0.2);
+}
+.tl-card {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: -1.4rem;
+  padding: 2rem 0.9rem 0.9rem;
+}
+.ds-card .tl-card h3,
+.tl-card h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ds-navy);
+}
+.tl-desc {
+  text-align: center;
+  font-size: 0.85rem;
+}
+.tl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.tl-list li {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: #3b4660;
+}
+.ds-card .tl-list .bi {
+  flex: none;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+/* ---------- Content panels (le-hoi, bao-ton) ---------- */
+.info-panel {
+  height: 100%;
+}
+.panel-band {
+  background: var(--band, var(--ds-blue));
+  color: #fff;
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.75rem;
+  margin: 0 0 0.75rem;
+}
+.panel-band--teal { --band: #1f8f82; }
+.panel-band--navy { --band: var(--ds-navy); }
+.ds-card .panel-lead {
+  text-align: center;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.item .arch-photo {
+  flex: none;
+  width: 6rem;
+  aspect-ratio: 4 / 3;
+}
+.item h4 {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ds-navy);
+}
+.ds-card .item p {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.spot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+  gap: 0.75rem;
+}
+.spot h4 {
+  margin: 0.4rem 0 0.15rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ds-navy);
+}
+.ds-card .spot p {
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
+  gap: 0.6rem;
+}
+
+/* ---------- Product cards, 4 across ---------- */
+.route-activities--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+.route-lead {
+  text-align: center;
+  color: var(--ds-navy);
+  font-weight: 600;
+  margin: -0.5rem 0 1.25rem;
+}

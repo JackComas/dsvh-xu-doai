@@ -59,8 +59,8 @@ const chuaThay = createMarker(
       e,
       "Chùa Thầy",
       "Ngôi chùa cổ gắn liền với Thiền sư Từ Đạo Hạnh, nổi bật với kiến trúc truyền thống, hồ Long Trì thơ mộng và nghệ thuật múa rối nước dân gian.",
-      "/tuyen-1.html",
-      "Tuyến 1: Chùa Thầy - Chùa Tây Phương",
+      "/tuyen-3.html",
+      "Tuyến 3: Lễ hội - Tín ngưỡng",
     );
   },
 );
@@ -114,7 +114,7 @@ allArea.on("click", (e) => {
     e,
     "Xứ Đoài",
     "Vùng đất giàu truyền thống văn hóa ở phía Tây Hà Nội, nổi tiếng với những ngôi chùa cổ, đình làng, làng nghề và di sản dân gian đặc sắc, mang đậm nét đẹp của vùng quê Bắc Bộ.",
-    "/tuyen-3.html",
-    "Tuyến 3: Lễ hội - Tín ngưỡng",
+    "#",
+    "",
   );
 });
