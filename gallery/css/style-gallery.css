@@ -1,0 +1,18 @@
+.gallery-container {
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.gallery {
+  height: 21rem;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: scroll;
+}
+
+.gallery-image {
+  height: 18rem;
+}

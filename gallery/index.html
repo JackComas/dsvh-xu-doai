@@ -16,13 +16,13 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style-pc.css" />
+    <link rel="stylesheet" href="./css/style-gallery.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg sticky-top ds-navbar">
         <div class="container-fluid px-4">
           <a href="./" class="ds-brand">
-            <!-- Simple emblem; replace with <img src="img/logo.png" alt="Logo"> when you have one -->
             <span>Di sản số Xứ Đoài</span>
           </a>
 
@@ -46,6 +46,31 @@
                 >
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#ChuaThay"
+                  ><i class="bi bi-house"></i>Chùa Thầy</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#LeHoi"
+                  ><i class="bi bi-house"></i>Lễ Hội Chùa Thầy</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ChuaTayPhuong"
+                  ><i class="bi bi-house"></i>Chùa Tây Phương</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#DinhSo"
+                  ><i class="bi bi-house"></i>Đình So</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#HatDo"
+                  ><i class="bi bi-house"></i>Hát Dô</a
+                >
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#lien-he"
                   ><i class="bi bi-envelope"></i>Liên hệ</a
                 >
@@ -64,10 +89,6 @@
     >
       <section id="titlecard">
         <div class="title">
-          <div class="hero-bg"></div>
-          <div class="hero-stars"></div>
-          <div class="hero-glow"></div>
-
           <h1 id="big-title">
             <i>Thư viện ảnh</i><br />
             Di sản văn hoá xứ Đoài
@@ -82,6 +103,31 @@
 
         <div class="hero-fog"></div>
       </section>
+
+      <section id="ChuaThay" class="gallery-container page-section">
+        <h1 class="section-title">Chùa Thầy</h1>
+        <div class="ds-card gallery" id="galleryChuaThay"></div>
+      </section>
+
+      <section id="LeHoi" class="gallery-container page-section">
+        <h1 class="section-title">Lễ Hội Chùa Thầy</h1>
+        <div class="ds-card gallery" id="galleryLeHoi"></div>
+      </section>
+
+      <section id="ChuaTayPhuong" class="gallery-container page-section">
+        <h1 class="section-title">Chùa Tây Phương</h1>
+        <div class="ds-card gallery" id="galleryChuaTayPhuong"></div>
+      </section>
+
+      <section id="DinhSo" class="gallery-container page-section">
+        <h1 class="section-title">Đình So</h1>
+        <div class="ds-card gallery" id="galleryDinhSo"></div>
+      </section>
+
+      <section id="HatDo" class="gallery-container page-section">
+        <h1 class="section-title">Hát Dô</h1>
+        <div class="ds-card gallery" id="galleryHatDo"></div>
+      </section>
     </main>
 
     <footer></footer>
@@ -93,5 +139,6 @@
     ></script>
 
     <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

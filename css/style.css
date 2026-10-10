@@ -62,6 +62,8 @@
 
 p.text.title {
   padding: 1rem 3rem;
+  background-color: var(--transparent-bg-color);
+  border-radius: 1rem;
 }
 
 p.text {
@@ -75,6 +77,8 @@ p.text {
   font-style: normal;
   z-index: 43;
   padding: 1rem 3rem;
+  background-color: var(--transparent-bg-color);
+  border-radius: 1rem;
 }
 
 #big-title > i {

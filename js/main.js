@@ -45,11 +45,5 @@ function removeBG(el) {
 }
 
 window.onload = () => {
-  const bigTitle = document.getElementById("big-title");
-  const allTexts = document.getElementsByClassName("text title");
-  for (let el of allTexts) {
-    addBG(el);
-  }
-  addBG(bigTitle);
   resizeTexts();
 };
