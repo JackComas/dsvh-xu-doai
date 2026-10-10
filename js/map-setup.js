@@ -59,6 +59,8 @@ const chuaThay = createMarker(
       e,
       "Chùa Thầy",
       "Ngôi chùa cổ gắn liền với Thiền sư Từ Đạo Hạnh, nổi bật với kiến trúc truyền thống, hồ Long Trì thơ mộng và nghệ thuật múa rối nước dân gian.",
+      "/tuyen-1.html",
+      "Tuyến 1: Chùa Thầy - Chùa Tây Phương",
     );
   },
 );
@@ -70,6 +72,8 @@ const chuaTayPhuong = createMarker(
       e,
       "Chùa Tây Phương",
       "Di tích nổi tiếng với kiến trúc chùa cổ độc đáo và hệ thống tượng La Hán bằng gỗ mang giá trị nghệ thuật điêu khắc đặc sắc.",
+      "/tuyen-1.html",
+      "Tuyến 1: Chùa Thầy - Chùa Tây Phương",
     );
   },
 );
@@ -81,6 +85,8 @@ const dinhSo = createMarker(
       e,
       "Đình So",
       "Ngôi đình cổ tiêu biểu của xứ Đoài, gây ấn tượng bởi kiến trúc gỗ tinh xảo, những chạm khắc dân gian công phu và không gian văn hóa làng quê Bắc Bộ.",
+      "/tuyen-2.html",
+      "Tuyến 2: Đình So",
     );
   },
 );
@@ -92,6 +98,23 @@ const hatDo = createMarker(
       e,
       "Hát Dô",
       "Loại hình diễn xướng dân gian độc đáo gắn với vùng Liệp Tuyết, Quốc Oai, kết hợp lời ca, nhạc cụ và nghi lễ truyền thống, góp phần lưu giữ bản sắc văn hóa địa phương.",
+      "/tuyen-4.html",
+      "Tuyến 4: Hát Dô và Múa rối nước",
     );
   },
 );
+
+const allArea = new Circle([21.00471, 105.62359], {
+  fillOpacity: 0.2,
+  radius: 10000,
+}).addTo(map);
+
+allArea.on("click", (e) => {
+  infoPopUp(
+    e,
+    "Xứ Đoài",
+    "Vùng đất giàu truyền thống văn hóa ở phía Tây Hà Nội, nổi tiếng với những ngôi chùa cổ, đình làng, làng nghề và di sản dân gian đặc sắc, mang đậm nét đẹp của vùng quê Bắc Bộ.",
+    "/tuyen-3.html",
+    "Tuyến 3: Lễ hội - Tín ngưỡng",
+  );
+});

@@ -1,0 +1,213 @@
+/* =========================================================
+   Các tuyến trải nghiệm – route pages (tuyen-1 … tuyen-4)
+   Load AFTER style.css, style-pc.css and style-architecture.css.
+   Re-uses: --ds-* tokens, .ds-card, .btn-ds, .arch-hero, .arch-photo,
+            .arch-subtitle and the tints defined on .arch-page.
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+#titlecard.route-hero #big-title {
+  font-size: clamp(1.7rem, 4.6vw, 3rem);
+}
+.route-badge {
+  display: inline-block;
+  background: var(--ds-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.route-journey {
+  margin: 1.75rem 0 0.75rem;
+  color: var(--ds-navy);
+  font-size: 0.9rem;
+}
+.route-journey strong {
+  display: block;
+  font-weight: 700;
+}
+
+/* ---------- Route switcher (4 pills) ---------- */
+.route-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.route-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--ds-card-border);
+  border-radius: 999px;
+  padding: 0.4rem 1rem 0.4rem 0.45rem;
+  color: var(--ds-navy);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 47, 107, 0.06);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.route-nav .num {
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--arch-blue-tint);
+  color: var(--ds-blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.route-nav a:hover {
+  border-color: var(--ds-blue);
+}
+.route-nav a:focus-visible {
+  outline: 3px solid var(--ds-teal);
+  outline-offset: 2px;
+}
+.route-nav a[aria-current="page"] {
+  background: var(--ds-blue);
+  border-color: var(--ds-blue);
+  color: #fff;
+}
+.route-nav a[aria-current="page"] .num {
+  background: #fff;
+}
+
+/* ---------- Section titles ---------- */
+.route-section-title {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  color: var(--bs-blue);
+  margin: 0 0 1.25rem;
+}
+
+/* ---------- Photo gallery ---------- */
+.route-gallery {
+  display: grid;
+  gap: 0.75rem;
+}
+.route-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 0.75rem;
+}
+.route-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 0.75rem;
+}
+.route-photo {
+  aspect-ratio: 16 / 10;
+}
+.route-main--single .route-photo {
+  aspect-ratio: 21 / 9;
+}
+.route-thumbs .route-photo {
+  aspect-ratio: 4 / 3;
+}
+@media (max-width: 575.98px) {
+  .route-main--single .route-photo {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ---------- Activity cards ---------- */
+.route-activities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+}
+.route-activity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+.route-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--arch-blue-tint);
+  color: var(--ds-blue);
+}
+/* beats `.ds-card .bi` (blue, 1.6rem) from style-pc.css */
+.ds-card .route-icon .bi {
+  color: inherit;
+  font-size: 1.35rem;
+}
+.route-activity h3 {
+  margin: 0;
+  line-height: 1.3;
+}
+.route-activity--product {
+  background: var(--arch-teal-tint);
+  border-color: #c5ebe6;
+}
+.route-activity--product .route-icon {
+  background: #fff;
+  color: #1f8f82;
+}
+.route-tag {
+  align-self: flex-start;
+  background: #1f8f82;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ---------- Student values ---------- */
+.route-values {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 1.25rem;
+}
+.route-values li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+.route-values h3 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+.route-values p {
+  font-size: 0.85rem;
+}
+
+/* ---------- Prev / next ---------- */
+.route-pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.route-pager .btn-ds {
+  text-decoration: none;
+}
+.route-pager .btn-ds .bi {
+  font-size: 1rem;
+}

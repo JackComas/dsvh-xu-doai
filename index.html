@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style-pc.css" />
-    <link rel="stylesheet" href="./css/style-touchscreen.css" />
+    <link rel="stylesheet" href="./css/style-footer.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
@@ -68,17 +68,12 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#di-san"
-                  ><i class="bi bi-bank"></i>Di sản</a
+                <a class="nav-link" href="#intro"
+                  ><i class="bi bi-bank"></i>Giới thiệu</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#video"
-                  ><i class="bi bi-play-circle"></i>Video</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#khao-sat"
+                <a class="nav-link" href="#survey"
                   ><i class="bi bi-bar-chart"></i>Khảo sát</a
                 >
               </li>
@@ -96,7 +91,7 @@
     <main
       data-bs-spy="scroll"
       data-bs-target="#mainNav"
-      data-bs-root-margin="0px 0px -40%"
+      data-bs-root-margin="0px 0px 40%"
       data-bs-smooth-scroll="true"
     >
       <section id="titlecard">
@@ -162,26 +157,32 @@
               các tuyến trải nghiệm di sản văn hoá!
             </p>
             <div class="row g-3">
-              <div class="col-6 col-lg-3">
-                <div class="ds-card">
-                  <div class="ds-placeholder ratio ratio-1x1">Chùa Thầy</div>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3">
-                <div class="ds-card">
-                  <div class="ds-placeholder ratio ratio-1x1">Đình So</div>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3">
-                <div class="ds-card">
-                  <div class="ds-placeholder ratio ratio-1x1">
-                    Chùa Tây Phương
+              <div class="col-6 col-lg-3 d-flex">
+                <div class="ds-card w-100 h-100">
+                  <div class="ds-placeholder ratio ratio-1x1 w-100 h-100">
+                    Chùa Thầy - Chùa Tây Phương
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-lg-3">
-                <div class="ds-card">
-                  <div class="ds-placeholder ratio ratio-1x1">Hát Dô</div>
+              <div class="col-6 col-lg-3 d-flex">
+                <div class="ds-card w-100 h-100">
+                  <div class="ds-placeholder ratio ratio-1x1 w-100 h-100">
+                    Đình So
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3 d-flex">
+                <div class="ds-card w-100 h-100">
+                  <div class="ds-placeholder ratio ratio-1x1 w-100 h-100">
+                    Lễ hội - Tín ngưỡng
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3 d-flex">
+                <div class="ds-card w-100 h-100">
+                  <div class="ds-placeholder ratio ratio-1x1 w-100 h-100">
+                    Hát Dô và Múa rối nước
+                  </div>
                 </div>
               </div>
             </div>
@@ -190,13 +191,13 @@
       </div>
 
       <div class="row section-group" id="intro">
-        <section id="video" class="page-section col-md-4 d-flex flex-column">
+        <section id="video" class="page-section col-md-5 d-flex flex-column">
           <h1 class="section-title">
             <i class="bi bi-play-circle"></i>Video giới thiệu
           </h1>
           <div class="ds-card">
             <div class="ratio ratio-16x9">
-              <iframe
+              <!-- <iframe
                 src="https://www.youtube.com/embed/5wMORvb6klM"
                 title="Khám phá vẻ đẹp chùa Thầy | Điểm đến"
                 frameborder="0"
@@ -211,11 +212,11 @@
                 "
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
-              ></iframe>
+              ></iframe> -->
             </div>
           </div>
         </section>
-        <section id="gallery" class="page-section col-md-4 d-flex flex-column">
+        <section id="gallery" class="page-section col-md-5 d-flex flex-column">
           <h1 class="section-title">
             <i class="bi bi-play-circle"></i>Thư viện ảnh
           </h1>
@@ -265,7 +266,7 @@
             </div>
           </div>
         </section>
-        <section id="articles" class="page-section col-md-4 d-flex flex-column">
+        <section id="articles" class="page-section col-md-2 d-flex flex-column">
           <h1 class="section-title">
             <i class="bi bi-file-earmark-text"></i>Bài viết nổi bật
           </h1>
@@ -282,15 +283,98 @@
         <script src="js/articles-setup.js"></script>
       </div>
 
-      <section id="khao-sat" class="page-section">
-        <h1 class="section-title"><i class="bi bi-bar-chart"></i>Khảo sát</h1>
-        <div class="ds-card">
-          <div class="ds-placeholder">Kết quả khảo sát sẽ hiển thị tại đây</div>
-        </div>
-      </section>
+      <div class="row section-group" id="survey">
+        <section
+          id="interview"
+          class="page-section col-md-6 d-flex flex-column"
+        >
+          <h1 class="section-title">
+            <i class="bi bi-play-circle"></i>Video phỏng vấn nghệ nhân
+          </h1>
+          <div class="ds-card">
+            <div class="ratio ratio-16x9">
+              <!-- <iframe
+                src="https://www.youtube.com/embed/5wMORvb6klM"
+                title="Khám phá vẻ đẹp chùa Thầy | Điểm đến"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+          </div>
+        </section>
+        <section id="survey" class="page-section col-md-3 d-flex flex-column">
+          <h1 class="section-title">
+            <i class="bi bi-play-circle"></i>Khảo sát
+          </h1>
+          <div class="ds-card flex-grow-1">
+            <div></div>
+          </div>
+        </section>
+        <section
+          id="survey-result"
+          class="page-section col-md-3 d-flex flex-column"
+        >
+          <h1 class="section-title">
+            <i class="bi bi-file-earmark-text"></i>Kết quả
+          </h1>
+          <div
+            class="ds-card flex-grow-1 position-relative overflow-hidden"
+            style="min-height: 200px"
+          >
+            <div
+              class="list-group list-group-flush position-absolute top-0 start-0 end-0 bottom-0 overflow-y-auto"
+              id="articleList"
+            ></div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer></footer>
+    <footer class="ds-footer" id="lien-he">
+      <div class="ds-footer-inner">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <p class="ds-footer-brand">Di sản số Xứ Đoài</p>
+            <p>
+              Giải pháp trải nghiệm và bảo tồn di sản văn hoá địa phương bằng
+              công nghệ số dành cho học sinh THPT.
+            </p>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h2>Khám phá</h2>
+            <ul>
+              <li><a href="index.html#experience">Trải nghiệm</a></li>
+              <li><a href="/architecture">Kiến trúc tiêu biểu</a></li>
+              <li><a href="index.html#video">Video</a></li>
+              <li><a href="index.html#survey">Khảo sát</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h2>Liên hệ</h2>
+            <ul>
+              <li>
+                <i class="bi bi-envelope"></i
+                ><a href="mailto:email@example.com">email@example.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ds-footer-bottom">© 2026 Dự án KHKT</div>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

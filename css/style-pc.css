@@ -42,7 +42,7 @@ html {
   gap: 0.4rem;
   color: var(--ds-navy);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   padding: 0.75rem 0.9rem;
   border-bottom: 2px solid transparent;
   transition:
@@ -50,7 +50,7 @@ html {
     border-color 0.2s;
 }
 .ds-navbar .nav-link i {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
 }
 .ds-navbar .nav-link:hover {
   color: var(--ds-blue);
@@ -74,35 +74,6 @@ html {
     border-bottom-color: var(--ds-blue);
     border-bottom-width: 2px;
   }
-}
-
-/* ---------- Hero buttons ---------- */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 1.25rem;
-}
-.btn-ds {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.6rem;
-  border-radius: 0.6rem;
-  color: #fff;
-  font-weight: 600;
-  text-shadow: none;
-  border: 0;
-}
-.btn-ds:hover {
-  color: #fff;
-  filter: brightness(1.1);
-}
-.btn-ds-primary {
-  background: var(--ds-blue);
-}
-.btn-ds-teal {
-  background: var(--ds-teal);
 }
 
 /* ---------- Sections as cards ---------- */
@@ -157,6 +128,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1030;
+  margin: 0;
   height: auto !important;
 }
 .ds-navbar {

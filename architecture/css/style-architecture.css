@@ -1,0 +1,312 @@
+/* =========================================================
+   Kiến trúc tiêu biểu Xứ Đoài  –  infographic as a web section
+   Load AFTER style.css and style-pc.css (re-uses their --ds-* tokens and .ds-card)
+   ========================================================= */
+
+.arch-page {
+  --arch-blue-tint: #eef3fc;
+  --arch-teal-tint: #e7f6f4;
+  --arch-navy-tint: #e8ecf5;
+  --arch-photo-bg: #f3f6fc;
+  font-family: "Space Grotesk", sans-serif;
+  color: #2d3748;
+}
+
+/* ---------- Intro: subtitle + 3 value chips ---------- */
+.arch-subtitle {
+  text-align: center;
+  color: var(--ds-navy);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: -0.25rem 0 1.25rem;
+}
+
+.arch-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+.arch-value {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  border: 1px solid var(--ds-card-border);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem 0.5rem 0.6rem;
+  color: var(--ds-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(15, 47, 107, 0.06);
+}
+.arch-value .bi {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--arch-blue-tint);
+  color: var(--ds-blue);
+  font-size: 1.05rem;
+}
+
+/* ---------- Heritage card ---------- */
+.arch-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.arch-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.arch-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.arch-card .arch-name {
+  margin: 0;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.15;
+  color: var(--ds-navy);
+}
+.arch-tagline {
+  margin: 0.15rem 0 0;
+  color: var(--ds-teal);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.ds-card .arch-tagline {
+  color: #1f8f82; /* darker teal for readable contrast on white */
+  font-size: 0.92rem;
+}
+
+/* ---------- Photos ---------- */
+.arch-media {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.6rem;
+  height: 17rem;
+}
+.arch-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: var(--arch-photo-bg);
+  border: 2px dashed var(--ds-card-border);
+  display: grid;
+  place-items: center;
+  color: #8a97b0;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.25rem;
+}
+.arch-photo--main {
+  grid-row: 1 / span 2;
+}
+/* When you drop in a real <img>, the dashed placeholder look goes away */
+.arch-photo:has(img) {
+  border: 0;
+  padding: 0;
+}
+.arch-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.arch-photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.3rem 0.4rem;
+  background: rgba(15, 47, 107, 0.82);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ---------- Three info panels ---------- */
+.arch-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.6rem;
+}
+.arch-panel {
+  border-radius: 0.75rem;
+  padding: 0.8rem 0.85rem;
+  border: 1px solid transparent;
+}
+.arch-panel--id {
+  background: var(--arch-blue-tint);
+  border-color: #d4e0f6;
+  --panel-color: var(--ds-blue);
+}
+.arch-panel--value {
+  background: var(--arch-teal-tint);
+  border-color: #c5ebe6;
+  --panel-color: #1f8f82;
+}
+.arch-panel--observe {
+  background: var(--arch-navy-tint);
+  border-color: #d0d8ea;
+  --panel-color: var(--ds-navy);
+}
+.arch-panel h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+  color: var(--panel-color);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+/* beats `.ds-card .bi` (blue, 1.6rem) from style-pc.css */
+.ds-card .arch-panel h4 .bi {
+  color: var(--panel-color);
+  font-size: 1.05rem;
+  flex: none;
+}
+
+.arch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.arch-list li {
+  position: relative;
+  padding-left: 0.95rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #3b4660;
+}
+.arch-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--panel-color);
+}
+
+/* ---------- Chùa vs Đình comparison ---------- */
+.arch-compare-title {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  color: var(--ds-navy);
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+.arch-compare {
+  --bs-table-bg: transparent;
+  margin: 0;
+  vertical-align: middle;
+}
+.arch-compare thead th {
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+  padding: 0.6rem;
+}
+.arch-compare thead th.th-chua {
+  background: var(--ds-blue);
+  border-top-left-radius: 0.6rem;
+}
+.arch-compare thead th.th-dinh {
+  background: var(--ds-teal);
+  border-top-right-radius: 0.6rem;
+}
+.arch-compare thead th.th-blank {
+  background: transparent;
+}
+.arch-compare tbody th {
+  white-space: nowrap;
+  color: var(--ds-navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.arch-compare tbody th .bi {
+  color: var(--ds-blue);
+  font-size: 1.15rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.12em;
+}
+.arch-compare td {
+  font-size: 0.9rem;
+  color: #3b4660;
+}
+
+@media (max-width: 575.98px) {
+  .arch-media {
+    height: 14rem;
+  }
+  .arch-compare tbody th {
+    white-space: normal;
+  }
+  .arch-compare tbody th .bi {
+    display: block;
+    margin: 0 0 0.2rem;
+  }
+}
+
+    
+/* ---------- Page hero: re-uses #titlecard from style.css ---------- */
+#titlecard.arch-hero {
+  min-height: 0;
+  padding: 3.5rem 1rem 1.5rem;
+  text-align: center;
+}
+#titlecard.arch-hero #big-title {
+  font-size: clamp(1.9rem, 5.5vw, 3.6rem);
+  line-height: 1.15;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+.arch-hero .arch-subtitle {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+}
+.arch-hero .arch-values {
+  margin-bottom: 0;
+}
+
+/* ---------- Footer ---------- */
+.arch-footer {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  color: #6b7893;
+  font-size: 0.9rem;
+}
+.arch-footer a {
+  color: var(--ds-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
